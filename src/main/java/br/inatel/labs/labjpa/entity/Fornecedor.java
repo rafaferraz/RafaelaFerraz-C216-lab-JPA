@@ -25,6 +25,13 @@ public class Fornecedor {
 	
 	@ManyToMany
 	private List<Produto> listaProduto;
+	
+	public Fornecedor() {}
+
+	public Fornecedor(String razaoSocial) {
+		super();
+		this.razaoSocial = razaoSocial;
+	}
 
 	public Long getId() {
 		return id;
@@ -65,5 +72,10 @@ public class Fornecedor {
 			return false;
 		Fornecedor other = (Fornecedor) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Fornecedor [id=" + id + ", razaoSocial=" + razaoSocial + "]";
 	}
 }

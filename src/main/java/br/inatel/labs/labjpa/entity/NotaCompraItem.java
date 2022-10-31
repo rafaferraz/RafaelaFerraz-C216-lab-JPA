@@ -30,6 +30,17 @@ public class NotaCompraItem {
 	@ManyToOne
 	private Produto produto;
 	
+	public NotaCompraItem() {}
+	
+	public NotaCompraItem( NotaCompra notaCompra, Produto produto,
+			BigDecimal valorCompraProduto, Integer quantidade) {
+		super();
+		this.notaCompra = notaCompra;
+		this.produto = produto;
+		this.valorCompraProduto = valorCompraProduto;
+		this.quantidade = quantidade;
+	}
+
 	public BigDecimal getCalculoTotalItem() {
 		return valorCompraProduto.multiply( BigDecimal.valueOf(quantidade) );
 	}
@@ -89,5 +100,11 @@ public class NotaCompraItem {
 			return false;
 		NotaCompraItem other = (NotaCompraItem) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "NotaCompraItem [id=" + id + ", valorCompraProduto=" + valorCompraProduto + ", quantidade=" + quantidade
+				+ "]";
 	}
 }
