@@ -16,6 +16,7 @@ import br.inatel.labs.labjpa.service.FornecedorService;
 import br.inatel.labs.labjpa.service.NotaCompraService;
 import br.inatel.labs.labjpa.service.ProdutoService;
 
+//Descomentar para rodar a primeira vez e depois manter comentado
 //@SpringBootTest
 class DataLoader {
 	@Autowired
@@ -27,6 +28,7 @@ class DataLoader {
 	@Autowired
 	private NotaCompraService notaCompraService;
 
+//	Descomentar para rodar a primeira vez e depois manter comentado
 //	@Test
 	void load() {
 		// Produto
